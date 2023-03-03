@@ -2,5 +2,6 @@
 
 #Demos
 - [Moving Rectangle](movingRect)
+- [Generative Art](generativeArt)
 
 #Projects
