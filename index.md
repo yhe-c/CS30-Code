@@ -6,3 +6,4 @@
 - [Bouncing Balls](bouncingBalls)
 - [Cubic Disarray](cubicDisarray)
 #Projects
+- [Array and Object Notation](arrayAssignment)
