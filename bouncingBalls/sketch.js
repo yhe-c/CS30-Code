@@ -20,10 +20,8 @@ function mousePressed() {
 
 function moveShapes() {
   for (let i = 0; i < shapes.length; i++) {
-    if (){
     shapes[i].x += shapes[i].dx;
     shapes[i].y += shapes[i].dy;
-    }
   }
 }
 
