@@ -22,7 +22,7 @@ function displaySpiral() {
   for (let i = 0; i < 1000; i++) {
     rotate(50);
     fill(spirals[i].theColor);
-    line(mouseX, mouseY, mouseX + 500, mouseY += 505);
+    line(spirals[i].x, spirals[i].y, mouseX + 500, mouseY += 505);
   }
 }
 
