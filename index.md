@@ -1,6 +1,6 @@
 #CS30 Demos - Sem 2 - 2023
 
-#Demos
+## Demos
 - [Moving Rectangle](movingRect)
 - [Generative Art](generativeArt)
 - [Bouncing Balls](bouncingBalls)
@@ -8,5 +8,7 @@
 - [Terrain Genereation](terrainGeneration)
 - [Perlin and Timing](perlinTiming) 
 - [Grid Demo](gridDemo)
-#Projects
+- [Colour Game](colourGame)
+
+## Projects
 - [Array and Object Notation](arrayAssignment)
