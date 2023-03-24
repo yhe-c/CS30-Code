@@ -9,6 +9,7 @@
 - [Perlin and Timing](perlinTiming) 
 - [Grid Demo](gridDemo)
 - [Colour Game](colourGame)
+- [Conway's Game of Life](gameOfLife)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
