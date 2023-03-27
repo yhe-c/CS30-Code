@@ -10,6 +10,7 @@
 - [Grid Demo](gridDemo)
 - [Colour Game](colourGame)
 - [Conway's Game of Life](gameOfLife)
+- [Character Moving in Grid](characterGrid)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
