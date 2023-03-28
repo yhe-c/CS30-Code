@@ -9,7 +9,7 @@
 
 let tiles;
 let levelBackground;
-let platform, coin, box, fly, p1, slime, empty;
+let platform, coin, boxItem, fly, p1, slime, empty;
 let tilesHigh, tilesWide;
 let tileWidth, tileHeight;
 let levelToLoad;
