@@ -11,6 +11,7 @@
 - [Colour Game](colourGame)
 - [Conway's Game of Life](gameOfLife)
 - [Character Moving in Grid](characterGrid)
+- [Platformer Skeleton](platformerSkeleton)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
