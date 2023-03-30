@@ -35,20 +35,32 @@ function keyTyped() {
     grid = createEmptyGrid(ROWS, COLS);
   }
   else if (key === "UP_ARROW") { //moves all blocks up if possible
-    moveBlocks(0, -1);
+    moveBlocksUp;
   }
   else if (key === "DOWN_ARROW") { //moves all blocks down if possible
-    moveBlocks(0, 1);
+    moveBlocksDown;
   }
   else if (key === "LEFT_ARROW") { //moves all blocks left if possible
-    moveBlocks(-1, 0);
+    moveBlocksLeft;
   }
   else if (key === "RIGHT_ARROW") { //moves all blocks right if possible
-    moveBlocks(1, 0);
+    moveBlocksRight;
   }
 }
 
-function moveBlocks(x, y) {
+function moveBlocksUp {
+  
+}
+
+function moveBlocksDown {
+
+}
+
+function moveBlocksLeft {
+
+}
+
+function moveBlocksRight {
 
 }
 
@@ -57,7 +69,7 @@ function displayGrid() { //functiont that displays the grid
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
         fill("white");
-        rect(x * cellSize, y * cellSize, cellSize, cellSize);
+        rect(x * cellSize, y * cellSize, cellSize, cellSize, 10);
       }
       else if (grid[y][x] === 1) {
         fill("yellow");
