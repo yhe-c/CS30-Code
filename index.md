@@ -12,6 +12,7 @@
 - [Conway's Game of Life](gameOfLife)
 - [Character Moving in Grid](characterGrid)
 - [Platformer Skeleton](platformerSkeleton)
+- [Sudoku](sudoku)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)

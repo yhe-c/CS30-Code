@@ -16,12 +16,14 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   grid = createEmptyGrid(ROWS, COLS);
   //creating biggest square grid possible
-  if (width < height) {
-    cellSize = width/ROWS;
+  if (windowWidth < windowHeight) {
+    createCanvas(windowWidth, windowWidth);
   }
   else {
-    cellSize = height/ROWS;
+    createCanvas(windowHeight, windowHeight);
   }
+
+  cellSize = width/ROWS;
 }
 
 function draw() {
