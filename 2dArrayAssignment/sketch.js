@@ -50,19 +50,19 @@ function keyTyped() {
   }
 }
 
-function moveBlocksUp {
+function moveBlocksUp() {
   
 }
 
-function moveBlocksDown {
+function moveBlocksDown() {
 
 }
 
-function moveBlocksLeft {
+function moveBlocksLeft() {
 
 }
 
-function moveBlocksRight {
+function moveBlocksRight() {
 
 }
 
@@ -70,13 +70,9 @@ function displayGrid() { //functiont that displays the grid
   for(let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
+        strokeWeight(5);
         fill("white");
-        rect(x * cellSize, y * cellSize, cellSize, cellSize, 10);
-      }
-      else if (grid[y][x] === 1) {
-        fill("yellow");
-        rect(x * cellSize, y * cellSize, cellSize, cellSize);
-        text("2", grid[x]/2, grid[y]/2);
+        rect(x * cellSize, y * cellSize, cellSize, cellSize, 15);
       }
     }
   }
