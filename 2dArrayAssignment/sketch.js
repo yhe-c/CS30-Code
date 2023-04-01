@@ -23,11 +23,11 @@ function setup() {
     createCanvas(windowHeight, windowHeight);
   }
 
-  cellSize = width/ROWS;
+  cellSize = width/ROWS/1.5;
 }
 
 function draw() {
-  translate(width/4, 0);
+  translate(width/3, height/4);
   background(220);
   displayGrid();
 }
@@ -37,16 +37,16 @@ function keyTyped() {
     grid = createEmptyGrid(ROWS, COLS);
   }
   else if (key === "UP_ARROW") { //moves all blocks up if possible
-    moveBlocksUp;
+    moveBlocksUp();
   }
   else if (key === "DOWN_ARROW") { //moves all blocks down if possible
-    moveBlocksDown;
+    moveBlocksDown();
   }
   else if (key === "LEFT_ARROW") { //moves all blocks left if possible
-    moveBlocksLeft;
+    moveBlocksLeft();
   }
   else if (key === "RIGHT_ARROW") { //moves all blocks right if possible
-    moveBlocksRight;
+    moveBlocksRight();
   }
 }
 
@@ -70,8 +70,9 @@ function displayGrid() { //functiont that displays the grid
   for(let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
-        strokeWeight(5);
-        fill("white");
+        strokeWeight(15);
+        stroke("#AAAE7F");
+        fill("#D0D6B3");
         rect(x * cellSize, y * cellSize, cellSize, cellSize, 15);
       }
     }
