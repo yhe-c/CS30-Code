@@ -9,32 +9,30 @@ let grid;
 const ROWS = 4;
 const COLS = 4;
 let cellSize;
-let blockX = 0;
-let blockY = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  grid = createEmptyGrid(ROWS, COLS);
+  grid = createStartingGrid(ROWS, COLS);
   //creating biggest square grid possible
   if (windowWidth < windowHeight) {
-    createCanvas(windowWidth, windowWidth);
+    cellSize = width/ROWS/1.5;
   }
   else {
-    createCanvas(windowHeight, windowHeight);
+    cellSize = height/COLS/1.5;
   }
 
-  cellSize = width/ROWS/1.5;
 }
 
 function draw() {
   translate(width/3, height/4);
   background(220);
   displayGrid();
+  addTile();
 }
 
 function keyTyped() {
   if (key === "r") { //restart with an empty grid
-    grid = createEmptyGrid(ROWS, COLS);
+    grid = createStartingGrid(ROWS, COLS);
   }
   else if (key === "UP_ARROW") { //moves all blocks up if possible
     moveBlocksUp();
@@ -59,27 +57,109 @@ function moveBlocksDown() {
 }
 
 function moveBlocksLeft() {
-
+  let Moved = false;
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 1; j < grid[i].length; j++) {
+      if (grid[i][j]) {
+        let k = j;
+        while (k > 0) {
+          if (!grid[i][k-1]) {
+            grid[i][k-1] = grid[i][k];
+            grid[i][k] = null;
+            k--;
+            Moved = true;
+          }
+          else if (grid[i][k-1] === grid[i][k]) { // check if next tile has the same value
+            grid[i][k-1] *= 2;
+            grid[i][k] = null;
+            Moved = true; 
+            break;
+          }
+          else {
+            break;
+          }
+        }
+      }
+    }
+  }
+  if (Moved) {
+    addTile();
+  }
 }
 
 function moveBlocksRight() {
 
 }
 
+// function addTile() {
+//   let options = [];
+//   for (let i = 0; i < grid.length; i++) {
+//     for (let j = 0; j < grid[i].length; j++) {
+//       if (!grid[i][j]) { 
+//         options.push({x: i, y: j}); 
+//       }
+//     }
+//   }
+//   if (options.length > 0) { 
+//     let spot = random(options); 
+//     let value = random(1) > 0.5 ? 2 : 4; 
+//     grid[spot.x][spot.y] = value; 
+//   }
+// }
+
 function displayGrid() { //functiont that displays the grid
+  strokeWeight(15);
+  stroke("#AAAE7F");
   for(let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
-        strokeWeight(15);
-        stroke("#AAAE7F");
         fill("#D0D6B3");
-        rect(x * cellSize, y * cellSize, cellSize, cellSize, 15);
+      }
+      else if (grid[y][x] === 1) {
+        fill("#D9ED92");
+      }
+      else if (grid[y][x] === 2) {
+        fill("#B5E48C");
+      }
+      else if (grid[y][x] === 3) {
+        fill("#99D98C");
+      }
+      else if (grid[y][x] === 4) {
+        fill("#76C893");
+      }
+      else if (grid[y][x] === 5) {
+        fill("#52B69A");
+      }
+      else if (grid[y][x] === 6) {
+        fill("#34A0A4");
+      }
+      else if (grid[y][x] === 7) {
+        fill("#168AAD");
+      }
+      else if (grid[y][x] === 8) {
+        fill("#1A759F");
+      }
+      else if (grid[y][x] === 9) {
+        fill("#1E6091");
+      }
+      else if (grid[y][x] === 10) {
+        fill("#184E77");
+      }
+      rect(x * cellSize, y * cellSize, cellSize, cellSize, 15);
+      if (grid[y][x] > 0) {
+        push();
+        fill("#D0D6B3");
+        strokeWeight(3);
+        textAlign(CENTER, CENTER);
+        textSize(35);
+        text(grid[y][x], x * cellSize + cellSize/2, y * cellSize + cellSize/2);
+        pop();
       }
     }
   }
 }
 
-function createEmptyGrid(ROWS, COLS) { //function that restarts the game/resets the grid
+function createStartingGrid(ROWS, COLS) { //function that restarts the game/resets the grid
   let newGrid = [];
   for (let y = 0; y < ROWS; y++) {
     newGrid.push([]);

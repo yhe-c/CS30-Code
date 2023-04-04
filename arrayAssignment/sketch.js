@@ -69,3 +69,4 @@ function spawnSpiral(tempX, tempY) {
   };
   spiral.push(newSpiral);
 }
+
