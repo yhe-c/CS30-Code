@@ -13,6 +13,7 @@
 - [Character Moving in Grid](characterGrid)
 - [Platformer Skeleton](platformerSkeleton)
 - [Sudoku](sudoku)
+- [Scribble Demo](scribbleDemo)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
