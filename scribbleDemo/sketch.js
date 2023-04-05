@@ -1,11 +1,12 @@
-// Colour Game
+// Game of Life (scribble style)
 
-const ROWS = 40;
-const COLS = 40;
+const ROWS = 10;
+const COLS = 10;
 let grid;
 let cellSize;
 let autoUpdate = true;
 let gosperGun;
+let scribble = new Scribble();
 
 function preload() {
   gosperGun = loadJSON("gosper.json");
@@ -25,6 +26,7 @@ function setup() {
 }
 
 function draw() {
+  noLoop();
   background(220);
   if (autoUpdate && frameCount % 10 === 0) {
     grid = updateGrid();
@@ -125,7 +127,7 @@ function displayGrid(grid) {
       if (grid[y][x] === 1) {
         fill("blue");
       }
-      rect(x*cellSize, y*cellSize, cellSize, cellSize);
+      scribble.scribbleRect(x*cellSize + cellSize/2, y*cellSize + cellSize/2, cellSize, cellSize);
     }
   }
 }
