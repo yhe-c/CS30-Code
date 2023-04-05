@@ -3,7 +3,7 @@
 // April 6, 2023
 //
 // Extra for Experts:
-// 
+// Used colon as a delimiter of the ternary operator expressions, 
 
 let grid;
 const ROWS = 4;
@@ -57,55 +57,27 @@ function moveBlocksDown() {
 }
 
 function moveBlocksLeft() {
-  let Moved = false;
-  for (let i = 0; i < grid.length; i++) {
-    for (let j = 1; j < grid[i].length; j++) {
-      if (grid[i][j]) {
-        let k = j;
-        while (k > 0) {
-          if (!grid[i][k-1]) {
-            grid[i][k-1] = grid[i][k];
-            grid[i][k] = null;
-            k--;
-            Moved = true;
-          }
-          else if (grid[i][k-1] === grid[i][k]) { // check if next tile has the same value
-            grid[i][k-1] *= 2;
-            grid[i][k] = null;
-            Moved = true; 
-            break;
-          }
-          else {
-            break;
-          }
-        }
-      }
-    }
-  }
-  if (Moved) {
-    addTile();
-  }
 }
 
 function moveBlocksRight() {
 
 }
 
-// function addTile() {
-//   let options = [];
-//   for (let i = 0; i < grid.length; i++) {
-//     for (let j = 0; j < grid[i].length; j++) {
-//       if (!grid[i][j]) { 
-//         options.push({x: i, y: j}); 
-//       }
-//     }
-//   }
-//   if (options.length > 0) { 
-//     let spot = random(options); 
-//     let value = random(1) > 0.5 ? 2 : 4; 
-//     grid[spot.x][spot.y] = value; 
-//   }
-// }
+function addTile() {
+  let options = [];
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] === 0) { 
+        options.push({x: i, y: j}); 
+      }
+    }
+  }
+  if (options.length > 0) { 
+    let spot = random(options); 
+    let value = random(1) > 0.5 ? 2 : 4; //if the random number is greater than 0.5 -> value = 2, if random number is less than 0.5 -> value = 4
+    grid[spot.x][spot.y] = value;
+  }
+}
 
 function displayGrid() { //functiont that displays the grid
   strokeWeight(15);
