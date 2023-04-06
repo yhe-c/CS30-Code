@@ -20,19 +20,21 @@ function setup() {
   else {
     cellSize = height/COLS/1.5;
   }
-
+  addTile();
+  addTile();
 }
 
 function draw() {
   translate(width/3, height/4);
   background(220);
   displayGrid();
-  addTile();
 }
 
 function keyTyped() {
   if (key === "r") { //restart with an empty grid
     grid = createStartingGrid(ROWS, COLS);
+    addTile();
+    addTile();
   }
   else if (key === "UP_ARROW") { //moves all blocks up if possible
     moveBlocksUp();
@@ -49,18 +51,46 @@ function keyTyped() {
 }
 
 function moveBlocksUp() {
-  
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] > 0 && i > 0) {
+        grid[i-(grid.length - (i+1))][j] = grid[i][j];
+        if (grid[i][j] === grid[i+1][j]) {
+          grid[i][j] + grid[i+1][j];
+        }
+      }
+    }
+  }
 }
 
 function moveBlocksDown() {
-
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] > 0 && i < grid.length) {
+        grid[i+(grid.length - (i+1))][j] = grid[i][j];
+      }
+    }
+  }
 }
 
 function moveBlocksLeft() {
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] > 0 && j > 0) {
+        grid[i][j-(grid[i].length - (j+1))] = grid[i][j];
+      }
+    }
+  }
 }
 
 function moveBlocksRight() {
-
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] > 0 && j > grid[i].length) {
+        grid[i][j-(grid[i].length - (j+1))] = grid[i][j];
+      }
+    }
+  }
 }
 
 function addTile() {
