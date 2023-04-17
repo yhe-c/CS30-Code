@@ -4,6 +4,7 @@
 //
 // Extra for Experts:
 // Used colon as a delimiter of the ternary operator expressions, used switch statement with different cases instead of if/else if for keyboard controls, explored some array functions (.reverse, .concat, .filter)
+// Note: attempted to add a high score but it kept resetting to 0 after a new game, also wanted to add sliding animation but didn't know how
 
 // initializing global variables
 const gridSize = 4;
@@ -19,7 +20,7 @@ function newGame() {
   complete = false;
   score = 0;
   grid = createEmptyGrid(gridSize, gridSize);
-  //creating biggest square grid possible
+  // creating biggest square grid possible
   if (windowWidth < windowHeight) {
     cellSize = width/gridSize/1.5;
   }
