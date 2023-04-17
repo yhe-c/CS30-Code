@@ -14,6 +14,7 @@
 - [Platformer Skeleton](platformerSkeleton)
 - [Sudoku](sudoku)
 - [Scribble Demo](scribbleDemo)
+- [Walker OOP](walker)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
