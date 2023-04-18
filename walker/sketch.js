@@ -41,20 +41,20 @@ class Walker {
   }
 }
 
-let kevin;
-let wasi;
+let dio;
+let jojo;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  kevin = new Walker(width/2, height/2);
-  wasi = new Walker(200, 400);
-  wasi.color = "blue";
+  dio = new Walker(width/2, height/2);
+  jojo = new Walker(200, 400);
+  jojo.color = "blue";
 }
 
 function draw() {
-  kevin.move();
-  wasi.move();
+  dio.move();
+  jojo.move();
 
-  kevin.display();
-  wasi.display();
+  dio.display();
+  jojo.display();
 }
