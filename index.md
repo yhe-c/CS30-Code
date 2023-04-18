@@ -15,6 +15,7 @@
 - [Sudoku](sudoku)
 - [Scribble Demo](scribbleDemo)
 - [Walker OOP](walker)
+- [Fireworks OOP](fireworks)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
