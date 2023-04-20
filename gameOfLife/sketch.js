@@ -71,13 +71,13 @@ function updateGrid() {
       for (let i = -1; i <= 1; i++) {
         for (let j = -1; j <= 1; j++) {
           //detect edge cases
-          if (y+i >= 0 && y+i < ROWS && x+j >= 0 && x+j < COLS) {
-            neighbours += grid[y+i][x+j];
+          if (y + i >= 0 && y + i < ROWS && x + j >= 0 && x + j < COLS) {
+            neighbours += grid[y + i][x + j];
           }
         }
       }
 
-      //be careful about counting self...
+      //be careful about counting self
       neighbours -= grid[y][x];
 
       //apply rules
