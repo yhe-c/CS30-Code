@@ -16,6 +16,7 @@
 - [Scribble Demo](scribbleDemo)
 - [Walker OOP](walker)
 - [Fireworks OOP](fireworks)
+- [Ball Array OOP](ballArray)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
