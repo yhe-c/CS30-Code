@@ -17,6 +17,7 @@
 - [Walker OOP](walker)
 - [Fireworks OOP](fireworks)
 - [Ball Array OOP](ballArray)
+- [Using Timers](timers)
 
 ## Projects
 - [Array and Object Notation](arrayAssignment)
