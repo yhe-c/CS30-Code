@@ -73,32 +73,33 @@ function setup() {
   character_walk.frameDelay = 8;
   character.addAni("walk", character_walk);
 
-  // enemy = new Sprite();
-  // enemy.img = enemy_img;
-  // enemy.x = width/1.75;
-  // enemy.y = height/(height/45);
-  // enemy.collider = "d";
-  // enemy.rotationLock = true;
-  // enemy_movement = loadAni("images/enemy0.png", "images/enemy1.png", "images/enemy2.png", "images/enemy1.png");
-  // enemy_movement.frameDelay = 10;
-  // enemy.addAni("walk", enemy_movement);
-  // enemySequence();
+  enemy = new Sprite();
+  enemy.img = enemy_img;
+  enemy.scale = 1/2;
+  enemy.x = width/1.75;
+  enemy.y = height/3;
+  enemy.collider = "d";
+  enemy.rotationLock = true;
+  enemy_movement = loadAni("images/enemy0.png", "images/enemy1.png", "images/enemy2.png", "images/enemy1.png");
+  enemy_movement.frameDelay = 10;
+  enemy.addAni("walk", enemy_movement);
+  enemySequence();
 }
 
 function collect() {
-  ward.shift();
+  ward.remove();
 }
 
-// async function enemySequence() {
-//   await enemy.move(50);
-//   enemySequence();
-// }
+async function enemySequence() {
+  await enemy.move(50);
+  enemySequence();
+}
 
 function draw() {
   clear();
   image(lvl_background, width/3, 0, width/2.72, height);
   if (kb.presses("up")) {
-    character.vel.y = -5;
+    character.vel.y = -7;
   }
   if (kb.pressing("left")) {
     character.ani ="walk";
