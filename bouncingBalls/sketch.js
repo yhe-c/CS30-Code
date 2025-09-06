@@ -1,38 +1,51 @@
 // Bouncing Balls
 //Using arrays and object notation
 
-simulation:
-  count: 64       ## number of particles`
-  maxVelocity: 3.  ## temperature
-  dT: 0.001       ## time step - simulation speed
-  
-  ##minGridSize: 20.0
-  ##maxForce: 100000.0
-  ##threeDimensions: false
-  ##passesPerFrame: 200
-  
-  size:
-    width:  50
-    height: 100
-    ##depth:  100
-    
- 
-    
-    
-particles:
-  A:
-    color: cccccc
-    radius: 1
-    distribution: 1
+let shapes = [];
 
 
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  spawnBall(width/2, height/2);
+}
 
 
-    
-interactions:
-  gravity:
-    A: { force: 0.005 }
-  morse:
-    
-    ## atom pair: {attraction, softness, equilibrium distance}
-    A-A:          { De: 0.01,   a: 2,    re: 2.5 }
+function draw() {
+  background(220);
+  moveShapes();
+  displayShapes();
+}
+
+
+function mousePressed() {
+  spawnBall(mouseX, mouseY);
+}
+
+
+function moveShapes() {
+  for (let i = 0; i < shapes.length; i++) {
+    shapes[i].x += shapes[i].dx;
+    shapes[i].y += shapes[i].dy;
+  }
+}
+
+
+function displayShapes() {
+  for (let i = 0; i < shapes.length; i++) {
+    fill(shapes[i].theColor);
+    circle(shapes[i].x, shapes[i].y, shapes[i].diameter);
+  }
+}
+
+
+function spawnBall(tempX, tempY) {
+  let newBall = {
+    x: tempX,
+    y: tempY,
+    dx: random(-5, 5),
+    dy: random(-5, 5),
+    diameter: random(25, 100),
+    theColor: color(random(255), random(255), random(255))
+  };
+  shapes.push(newBall);
+}
